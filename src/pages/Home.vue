@@ -1,13 +1,7 @@
 <template>
-  <div>Home Page
-    eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis ab dolore nulla qui. Similique obcaecati, nihil eum ab repellendus dicta assumenda tempore? Tempore obcaecati eligendi voluptas dolore soluta commodi!
-  </div>
+  <h1>
+    صفحه اصلی
+  </h1>
 </template>
 
 <script>
