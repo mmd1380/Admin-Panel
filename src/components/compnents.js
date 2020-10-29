@@ -1,7 +1,13 @@
-import AppForm from "./AppForm.vue";
-import AppNav from "./AppForm.vue";
+import AppForm from "./common/AppForm";
+import AppNavBar from "./layout/AppNav";
+import AppFooter from "./layout/AppFooter";
+import AppSearchBox from "./common/AppSearchBox";
+import AppNavMenu from "./layout/AppNavMenu";
 
 export {
   AppForm,
-  AppNav
+  AppNavBar,
+  AppFooter,
+  AppSearchBox,
+  AppNavMenu
 }

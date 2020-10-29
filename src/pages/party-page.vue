@@ -1,8 +1,7 @@
 <template>
-<v-card dir="rtl" flat class="elevation-0" height="100vh">
-  <v-tabs
-      color="deep-purple accent-4"
-      
+  <v-card dir="rtl" flat class="elevation-0" height="100vh">
+    <v-tabs
+      color="primary"
     >
       <v-tab>شخص حقیقی</v-tab>
       <v-tab>شخص حقوقی</v-tab>
@@ -19,12 +18,10 @@
 
 <script>
 import { AppForm } from "../components/compnents.js";
-import Search from "../components/AppSearchBox"
 
 export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    Search,
     AppForm
   }
 }

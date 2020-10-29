@@ -3,10 +3,9 @@
     dense
     dark
     max-height="54px"
+    fixed
   >
-    <v-app-bar-nav-icon @click="open = !open"></v-app-bar-nav-icon>
-
-    <v-toolbar-title>Page title</v-toolbar-title>
+    <v-toolbar-title>پنل ادمین</v-toolbar-title>
 
     <v-spacer></v-spacer>
 

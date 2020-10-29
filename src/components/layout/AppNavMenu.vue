@@ -1,7 +1,6 @@
 <template>
-  <v-card dark flat>
+  <v-card dark flat class="nav-container">
     <v-navigation-drawer
-      v-model="drawer"
       max-height="100vh"
       :mini-variant.sync="mini"
       permanent
@@ -9,9 +8,9 @@
     >
       <v-list-item class="px-2">
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+          <v-img :src="user.avatar"></v-img>
         </v-list-item-avatar>
-        <v-list-item-title>John Leider</v-list-item-title>
+        <v-list-item-title>{{ user.name }}</v-list-item-title>
         <v-btn
           icon
           @click.stop="mini = !mini"
@@ -20,7 +19,7 @@
         </v-btn>
       </v-list-item>
       <v-divider></v-divider>
-      <v-list dense>
+      <v-list>
         <v-list-item
           v-for="item in items"
           :key="item.title"
@@ -40,16 +39,25 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        drawer: true,
-        items: [
-          { title: 'Home', icon: 'mdi-home-city', link: "/" },
-          { title: 'Parties', icon: 'mdi-account', link: "/add-party" }
-        ],
-        mini: true,
-      }
+export default {
+  data: () => ({
+    user: {
+      avatar: "https://randomuser.me/api/portraits/men/85.jpg",
+      name: "محمدرضا سیف"
     },
-  }
+    items: [
+      { title: 'صفحه اصلی', icon: 'mdi-home-city', link: "/" },
+      { title: 'اشخاص', icon: 'mdi-account', link: "/party-page" },
+      { title: 'بیمه نامه ها', icon: 'mdi-book', link: "/test" },
+      { title: 'خروج', icon: 'mdi-door', link: "/test2" }
+    ],
+    mini: false,
+  })
+}
 </script>
+
+<style scoped>
+.nav-container {
+  margin: 48px 0 0 0;
+}
+</style>
