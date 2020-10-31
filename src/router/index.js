@@ -14,6 +14,11 @@ const routes = [
     path: "/party-page",
     name: "PartyPage",
     component: () => import(/* webpackChunkName: "party-page" */"../pages/party-page")
+  },
+  {
+    path: "/add-party",
+    name: "AddParty",
+    component: () => import(/* webpackChunkName: "add-party" */"../pages/add-party")
   }
 ]
 

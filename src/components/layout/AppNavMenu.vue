@@ -47,7 +47,7 @@ export default {
     },
     items: [
       { title: 'صفحه اصلی', icon: 'mdi-home-city', link: "/" },
-      { title: 'اشخاص', icon: 'mdi-account', link: "/party-page" },
+      { title: 'اشخاص', icon: 'mdi-account', link: "/party-page", items: [{ name: "اضافه کردن شخص", link: "/add-party", icon: "mdi-plus" }] },
       { title: 'بیمه نامه ها', icon: 'mdi-book', link: "/test" },
       { title: 'خروج', icon: 'mdi-door', link: "/test2" }
     ],

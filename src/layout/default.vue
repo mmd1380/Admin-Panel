@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { AppNavBar, AppNavMenu } from "../components/compnents.js";
+import { AppNavBar, AppNavMenu } from "../components/components.js";
 
 export default {
   components: { AppNavBar, AppNavMenu },

@@ -2,7 +2,7 @@
   <v-app>
     <layout>
       <transition name="slide">
-        <router-view />
+        <router-view :key="$route.path"/>
       </transition>
     </layout>
   </v-app>
@@ -34,10 +34,10 @@ html {
   font-family: 'b nazanin';
 }
 .slide-enter-active, .slide-leave-active {
-  transition: all .5s;
+  transition: all .4s;
 }
 .slide-enter-active {
-  transition-delay: .5s;
+  transition-delay: .4s;
 }
 .slide-enter
 ,.slide-leave-to {
