@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <layout>
-      <router-view />
+      <transition name="slide">
+        <router-view />
+      </transition>
     </layout>
   </v-app>
 </template>
@@ -30,5 +32,21 @@ html {
 
 #app {
   font-family: 'b nazanin';
+}
+.slide-enter-active, .slide-leave-active {
+  transition: all .5s;
+}
+.slide-enter-active {
+  transition-delay: .5s;
+}
+.slide-enter
+,.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.slide-enter-to,
+.slide-leave {
+  opacity: 1;
+  transform: translateX(0px);
 }
 </style>
