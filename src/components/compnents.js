@@ -1,7 +1,7 @@
 import AppForm from "./common/AppForm";
 import AppNavBar from "./layout/AppNav";
 import AppFooter from "./layout/AppFooter";
-import AppSearchBox from "./common/AppSearchBox";
+import AppSearchBox from "./common/AppPartySearchBox";
 import AppNavMenu from "./layout/AppNavMenu";
 
 export {
