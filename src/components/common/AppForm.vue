@@ -1,7 +1,7 @@
 <template>
-  <v-expansion-panels multiple focusable>
+  <v-expansion-panels v-model="open" multiple focusable>
     <v-expansion-panel dir="ltr">
-      <v-expansion-panel-header style="text-align: right; direction: rtl">
+      <a name="main"><v-expansion-panel-header style="text-align: right; direction: rtl">
         <template v-slot:default="{ open }">
           <v-row>
             <v-col
@@ -27,7 +27,7 @@
             </v-col>
           </v-row>
         </template>
-      </v-expansion-panel-header>
+      </v-expansion-panel-header></a>
       <v-expansion-panel-content>
         <form>
           <v-row>
@@ -333,7 +333,7 @@
       </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel dir="ltr">
-      <v-expansion-panel-header style="text-align: right; direction: rtl">
+      <a name="complement"><v-expansion-panel-header style="text-align: right; direction: rtl">
         <template v-slot:default="{ open }">
           <v-row>
             <v-col
@@ -361,7 +361,7 @@
             </v-col>
           </v-row>
         </template>
-      </v-expansion-panel-header>
+      </v-expansion-panel-header></a>
       <v-expansion-panel-content>
         <form>
           <v-row>
@@ -503,7 +503,7 @@
       </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel dir="ltr">
-      <v-expansion-panel-header style="text-align: right; direction: rtl">
+      <a name="communicate"><v-expansion-panel-header style="text-align: right; direction: rtl">
         <template v-slot:default="{}">
           <v-row>
             <v-col
@@ -522,7 +522,7 @@
             </v-col>
           </v-row>
         </template>
-      </v-expansion-panel-header>
+      </v-expansion-panel-header></a>
       <v-expansion-panel-content>
         <v-form ref="form">
           <v-row>
@@ -572,7 +572,7 @@
       </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel dir="ltr">
-      <v-expansion-panel-header style="text-align: right; direction: rtl">
+      <a name="address"><v-expansion-panel-header style="text-align: right; direction: rtl">
         <template>
           <v-row>
             <v-col
@@ -591,7 +591,7 @@
             </v-col>
           </v-row>
         </template>
-      </v-expansion-panel-header>
+      </v-expansion-panel-header></a>
       <v-expansion-panel-content>
         <!-- <AddressCard /> -->
       </v-expansion-panel-content>

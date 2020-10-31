@@ -2,7 +2,7 @@
   <v-app>
     <layout>
       <transition name="slide">
-        <router-view :key="$route.path"/>
+        <router-view />
       </transition>
     </layout>
   </v-app>
