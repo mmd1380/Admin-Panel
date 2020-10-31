@@ -1,12 +1,10 @@
 <template>
-  <v-card style="height: 100vh" class="d-flex">
-    <v-card width="100%" style="border-radius: 0;" class="d-flex flex-column overflow-y-auto" flat>
-      <AppNavBar />
-      <v-card min-height="100%" dir="rtl" class="content">
-        <slot />
-      </v-card>
+  <v-card style="height: 100vh; border-radius: 0;" class="d-flex justify-end" flat>
+    <AppNavBar />      
+    <v-card dir="rtl" class="content overflow-y-auto">
+      <slot />
     </v-card>
-    <AppNavMenu />
+    <AppNavMenu />    
   </v-card>
 </template>
 
@@ -24,6 +22,8 @@ export default {
   position: absolute;
 }
 .content {
-  padding: 54px 20px 10px;
+  padding: 0 20px;
+  margin: 54px 0 0 0;
+  width: 100%;
 }
 </style>
