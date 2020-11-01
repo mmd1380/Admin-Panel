@@ -661,7 +661,6 @@ export default {
       CommunicationWays: ["موبایل", "تلفن", "شبکه اجتماعی", "ایمیل"],
       CommunicateWay: [],
       CommunicateData: {}
-
     },
   }),
   computed: {

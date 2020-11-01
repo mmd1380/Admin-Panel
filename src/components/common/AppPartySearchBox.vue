@@ -6,14 +6,11 @@
           label="کد ملی"
           v-model="searchedValue"
           maxlength="12"
-          @keyup="filterNationalId()"
-          @keyup.enter="startSearch()"
           outlined
           append-icon="mdi-account-search"
           :prepend-icon="btn"
-          @click:prepend="openFilterField()"
+          @click:prepend="show = !show"
           @click:append="search()"
-          style="text-align: right !important;"
         ></v-text-field>
       </v-col>
     </v-row>
@@ -30,11 +27,12 @@
                 <v-row no-gutters>
                   <v-col cols="8">
                     <v-text-field
-                    :label="input"
-                    outlined
-                    dense
-                    style="border-radius: 0px 10px 10px 0px;"
-                  ></v-text-field>
+                      :label="input"
+                      outlined
+                      dense
+                      style="border-radius: 0px 10px 10px 0px;"
+                      v-model="inputValues[input]"
+                    ></v-text-field>
                   </v-col>
                   <v-col cols="4">
                     <v-select
@@ -52,12 +50,8 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-btn color="primary" class="mx-2">
-                  جستجو
-                </v-btn>
-                <v-btn text>
-                  دخیره جستجو
-                </v-btn>
+                <v-btn color="primary" class="mx-2" @click.stop="startSearch()">جستجو</v-btn>
+                <v-btn text>دخیره جستجو</v-btn>
               </v-col>
             </v-row>
           </v-card>
@@ -71,31 +65,24 @@
 export default {
   data: () => ({
     show: false,
+    chip: true,
     btn: "mdi-arrow-down-drop-circle",
     inputs: ["نام خانوادگی", "نام", "شهر", "تاریخ تولد", "تست", "تست"],
     items: ["<", "==", ">", "!=", "<=", ">="],
-    searchedValue: ""
+    inputValues: {},
+    searchedValue: "",
   }),
   methods: {
     search() {
       console.log("Hello World")
-    },
-    openFilterField() {
-      this.show = !this.show;
     },
     getData() {
       this.$store.dispatch("fetchData");
       this.show = false;
     },
     startSearch() {
-      const db = this.$store.state.data;
-      const filteredArr = db.find(el => el.NationalID == this.searchedValue);
-      this.$store.commit("SET_DATA_TABLE", filteredArr);
-    },
-    filterNationalId() {
-      if (this.searchedValue.length === 3 || this.searchedValue.length === 10) {
-        this.searchedValue += "-";
-      }
+      this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
+      this.show = false;
     }
   }
 };
