@@ -58,6 +58,21 @@
         </transition>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>
+        <v-chip
+          dir="ltr"
+          class="ma-2"
+          close
+          color="primary"
+          outlined
+          @click:close="chip3 = false"
+          v-for="(item, index) in getFilteredSearchData"
+          :key="item"
+        >{{ index }} : {{ item }}</v-chip>
+      </v-col>
+ 
+    </v-row>
   </v-card>
 </template>
 
@@ -72,6 +87,11 @@ export default {
     inputValues: {},
     searchedValue: "",
   }),
+  computed: {
+    getFilteredSearchData() {
+      return this.$store.state.filteredSearch;
+    }
+  },
   methods: {
     search() {
       console.log("Hello World")
@@ -83,6 +103,7 @@ export default {
     startSearch() {
       this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
       this.show = false;
+      console.log(this.$store.state.filteredSearch);
     }
   }
 };
