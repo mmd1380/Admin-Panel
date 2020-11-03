@@ -12,8 +12,15 @@ const routes = [
   },
   {
     path: "/party-page",
-    name: "PartyPage",
-    component: () => import(/* webpackChunkName: "party-page" */"../pages/party-page")
+    name: "Party",
+    component: () => import(/* webpackChunkName: "party-page" */"../pages/party-page"),
+    // children: [
+    //   {
+    //     path: "add-party",
+    //     name: "AddParty",
+    //     component: () => import(/* webpackChunkName: "add-party" */"../pages/add-party")
+    //   }
+    // ]
   },
   {
     path: "/add-party",

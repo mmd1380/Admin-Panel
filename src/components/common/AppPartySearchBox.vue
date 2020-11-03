@@ -1,17 +1,28 @@
 <template>
   <v-card style="overflow: hidden;" dir="rtl" flat>
-    <v-row no-gutters justify="start" class="search-box">
-      <v-col cols="9" dir="ltr">
-        <v-text-field
-          label="کد ملی"
-          v-model="searchedValue"
-          maxlength="12"
-          outlined
-          append-icon="mdi-account-search"
-          :prepend-icon="btn"
-          @click:prepend="show = !show"
-          @click:append="search()"
-        ></v-text-field>
+    <v-row no-gutters justify="start" class="mt-2">
+      <v-col cols="12">
+        <v-row justify="space-between" align="center">
+          <v-col cols="9">
+            <v-text-field
+              label="کد ملی"
+              v-model="searchedValue"
+              maxlength="12"
+              outlined
+              reverse
+              hide-details="auto"
+              append-icon="mdi-account-search"
+              :prepend-inner-icon="btn"
+              @click:prepend-inner="show = !show"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="3" class="text-center">
+            <v-btn large color="primary" :to="{ name: 'AddParty' }">
+              <v-icon right>mdi-plus</v-icon>
+              <span>ایجاد شخص جدید</span>
+            </v-btn>
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
     <v-row justify="start">
@@ -27,6 +38,7 @@
                 <v-row no-gutters>
                   <v-col cols="8">
                     <v-text-field
+                      reverse
                       :label="input"
                       outlined
                       dense
@@ -37,6 +49,7 @@
                   <v-col cols="4">
                     <v-select
                       dense
+                      reverse
                       flat
                       :items="items"
                       label=">"
@@ -69,9 +82,8 @@
           @click:close="chip3 = false"
           v-for="(item, index) in getFilteredSearchData"
           :key="item"
-        >{{ index }} : {{ item }}</v-chip>
+        >{{ index }}: {{ item }}</v-chip>
       </v-col>
- 
     </v-row>
   </v-card>
 </template>
@@ -93,9 +105,6 @@ export default {
     }
   },
   methods: {
-    search() {
-      console.log("Hello World")
-    },
     getData() {
       this.$store.dispatch("fetchData");
       this.show = false;
@@ -110,20 +119,8 @@ export default {
 </script>
 
 <style>
-.arrow-icon {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: -67%;
-  right: 20px;
-  cursor: pointer;
-}
-.search-box {
-  height: 80px;
-  margin-top: 10px;
-}
 .drop-down {
-  margin-top: -36px;
+  margin-top: -20px;
 }
 .slide-enter-active, .slide-leave-active {
   transition: all 0.3s;

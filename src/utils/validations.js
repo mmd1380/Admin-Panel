@@ -1,14 +1,8 @@
-const required = () => {
-  return v => !!v || "این قسمت باید پر شود";
-}
+const required = () => v => !!v || "این قسمت باید پر شود";
 
-const minlength = (length) => {
-  return v => v.length > length || ` باید ${length} باشد`
-}
+const minlength = (length) => v => v.length > length || ` باید ${length} باشد`;
 
-const maxlength = (length) => {
-  return v => v.length < length || ` باید ${length} باشد`
-}
+const maxlength = (length) => v => v.length < length || ` باید ${length} باشد`;
 
 export default {
   required,

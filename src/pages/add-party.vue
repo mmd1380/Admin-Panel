@@ -38,7 +38,7 @@ export default {
       { text: 'اطلاعات اصلی', icon: 'mdi-account', link: "main" },
       { text: 'اطلاعات تکمیلی', icon: 'mdi-check', link: "complement" },
       { text: 'اطلاعات تماس ها', icon: 'mdi-phone', link:  "communicate"},
-      { text: 'اطلاعات آدرس ها', icon: 'mdi-book', link: "address" },
+      { text: 'اطلاعات آدرس ها', icon: 'mdi-door', link: "address" },
     ],
     hashLinks: ["main", "complement", "communicate", "address"],
   })
@@ -49,6 +49,6 @@ export default {
 .context-menu {
   position: fixed;
   left: 10px;
-  top: 56px;
+  top: 132px;
 }
 </style>

@@ -4,6 +4,7 @@ import AppFooter from "./layout/AppFooter";
 import AppSearchBox from "./common/AppPartySearchBox";
 import AppPartiesTable from "./common/AppPartiesTable";
 import AppNavMenu from "./layout/AppNavMenu";
+import AppFormAddress from "./common/AppFormAddressTable"
 
 export {
   AppForm,
@@ -11,5 +12,6 @@ export {
   AppFooter,
   AppSearchBox,
   AppNavMenu,
-  AppPartiesTable
+  AppPartiesTable,
+  AppFormAddress
 }

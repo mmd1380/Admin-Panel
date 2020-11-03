@@ -593,14 +593,17 @@
         </template>
       </v-expansion-panel-header></a>
       <v-expansion-panel-content>
-        <!-- <AddressCard /> -->
+        <AppFormAddress />
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
 
 <script>
+import { AppFormAddress } from "@/components/components.js"
+
 export default {
+  components: { AppFormAddress },
   name: "AppForm",
   data: () => ({
     open: [0, 1, 2, 3],

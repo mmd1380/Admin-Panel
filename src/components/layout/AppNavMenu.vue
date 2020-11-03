@@ -1,37 +1,33 @@
 <template>
-  <v-card dark flat class="nav-container">
+  <v-card dir="rtl" flat class="nav-container">
     <v-navigation-drawer
       max-height="100vh"
       :mini-variant.sync="mini"
       permanent
       style="border-radius: 0;"
+      class="pa-2"
     >
       <v-list-item class="px-2">
+        <v-list-item-title class="mx-2">{{ user.name }}</v-list-item-title>
         <v-list-item-avatar>
           <v-img :src="user.avatar"></v-img>
         </v-list-item-avatar>
-        <v-list-item-title>{{ user.name }}</v-list-item-title>
-        <v-btn
-          icon
-          @click.stop="mini = !mini"
-        >
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
       </v-list-item>
       <v-divider></v-divider>
-      <v-list>
+      <v-list nav>
         <v-list-item
           v-for="item in items"
           :key="item.title"
           link
           :to="item.link"
+          color="primary"
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -43,7 +39,7 @@ export default {
   data: () => ({
     user: {
       avatar: "https://randomuser.me/api/portraits/men/85.jpg",
-      name: "محمدرضا سیف"
+      name: "محمد محمدی"
     },
     items: [
       { title: 'صفحه اصلی', icon: 'mdi-home-city', link: "/" },
@@ -58,6 +54,7 @@ export default {
 
 <style scoped>
 .nav-container {
-  margin: 48px 0 0 0;
+  margin: 60px 0 0 0;
+  border-left: solid 1px #ccc;
 }
 </style>

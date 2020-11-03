@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <layout>
       <transition name="slide">
         <router-view />
@@ -34,10 +34,10 @@ html {
   font-family: 'b nazanin';
 }
 .slide-enter-active, .slide-leave-active {
-  transition: all .4s;
+  transition: all .2s;
 }
 .slide-enter-active {
-  transition-delay: .4s;
+  transition-delay: .2s;
 }
 .slide-enter
 ,.slide-leave-to {
@@ -48,5 +48,19 @@ html {
 .slide-leave {
   opacity: 1;
   transform: translateX(0px);
+}
+.light::-webkit-scrollbar {
+  width: 5px;
+}
+.light::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+.light::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+.light::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
 }
 </style>
