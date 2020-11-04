@@ -32,6 +32,7 @@ html {
 
 #app {
   font-family: 'b nazanin';
+  font-weight: bold;
 }
 .slide-enter-active, .slide-leave-active {
   transition: all .2s;

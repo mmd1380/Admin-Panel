@@ -5,11 +5,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    filteredSearch: {}
+    filteredSearch: []
   },
   getters: {},
   mutations: {
-    SET_FILTERED_SEARCH: (state, payload) => state.filteredSearch = { ...payload }
+    SET_FILTERED_SEARCH: (state, payload) => state.filteredSearch.push(payload),
+    REMOVE_FILTERED_SEARCH: (state, index) => state.filteredSearch.splice(index, 1)
   },
   actions: {},
   modules: {}
