@@ -2,16 +2,16 @@
   <v-snackbar
     v-model="snackbar"
     :timeout="timeout"
-    color="primary"
+    color="success"
     elevation="40"
     rounded="pill"
     class="text-lg-h6 font-weight-bold"
     dir="rtl"
-  >
+  ><v-icon left class="mr-4">mdi-check</v-icon>
     جستجو با عنوان
     {{ searchName }}
     با موفقیت ذخیره شد.
-    <v-icon left class="mr-4">mdi-check</v-icon>
+
   </v-snackbar>
 </template>
 
