@@ -95,7 +95,24 @@
                 <v-btn color="primary" class="mx-2" @click.stop="startSearch()"
                   >جستجو</v-btn
                 >
-                <v-btn text>دخیره جستجو</v-btn>
+                <v-btn text @click.stop="$store.commit('SET_ACTIVE_MODAL', true)">دخیره جستجو</v-btn>
+                <v-dialog width="360" v-model="dialog">
+                  <v-card tile dir="rtl" class="px-4 py-2 font-weight-bold">
+                    <v-card-title>ذخیره فیلتر جستجو</v-card-title>
+                    <v-divider></v-divider>
+                    <v-card-text class="my-2 text-subtitle">
+                      با ذخیره کردن فیلتر جستجو امکان دسترسی به فیلتر مورد نظر در سریع ترین حالت ممکن خواهید داشت
+                    </v-card-text>
+                    <v-text-field
+                      label="فیلتر جستجو"
+                      reverse
+                    ></v-text-field>
+                    <v-card-actions>
+                      <v-btn color="primary">ثبت فیلتر</v-btn>
+                      <v-btn color="primary" text class="mx-2" @click="dialog = false">انصراف</v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
               </v-col>
             </v-row>
           </v-card>
@@ -104,31 +121,30 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-chip
-          dir="ltr"
-          class="ma-2"
-          close
-          color="primary"
-          outlined
-          v-for="(item, index) in getFilteredSearchData"
-          :key="index"
-          @click:close="removeChip(index)"
-          >{{ index }}: {{ item }}</v-chip
-        >
+        <transition-group name="slideX">
+          <AppChip 
+            v-for="(item, index) in getFilteredSearchData"
+            :key="index"
+            :propertyName="index"
+            :propertyValue="item"
+            @remove-chip="removeChip(index)"
+          />
+        </transition-group>
       </v-col>
     </v-row>
   </v-card>
 </template>
 
 <script>
-import { AppSortingSearch } from "@/components/components.js";
+import AppSortingSearch from "./AppSortingSearch";
+import AppChip from "./AppChip";
+
 export default {
-  components: { AppSortingSearch },
+  components: { AppSortingSearch, AppChip },
   data: () => ({
     show: false,
-    chip: true,
     btn: "mdi-arrow-down-drop-circle",
-    inputs: ["نام خانوادگی", "نام", "شهر", "تاریخ تولد"],
+    inputs: ["نام خانوادگی", "نام", "شهر", "تاریخ تولد", "کد ملی", "کد شخص"],
     items: ["کوچکتر از", "مساوی", "بزرگتر از", "مخالف", "شروع با", "پایان با"],
     inputValues: {},
     searchedValue: "",
@@ -173,7 +189,9 @@ export default {
   margin-top: -20px;
 }
 .slide-enter-active,
-.slide-leave-active {
+.slideX-enter-active,
+.slide-leave-active,
+.slideX-leave-active {
   transition: all 0.3s;
 }
 .slide-leave-to,
@@ -184,6 +202,14 @@ export default {
 .slide-enter-to,
 .slide-leave {
   transform: translateY(0px);
+  opacity: 1;
+}
+.slideX-leave-to,
+.slideX-enter {
+  opacity: 0;
+}
+.slideX-enter-to,
+.slideX-leave {
   opacity: 1;
 }
 .v-text-field input::placeholder {
