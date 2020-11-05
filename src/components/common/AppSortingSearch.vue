@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="6"> 
       <v-autocomplete
-        v-model="valueModels"
+        v-model="priorityName"
         :items="Sorting.OrderBy"
         :label="priority"
         reverse
@@ -33,11 +33,6 @@
 <script>
 export default {
   name: "AppSortingSearch",
-  computed: {
-    valueModels() {
-      return this.$store.state.searchPriorityValues
-    }
-  },
   data: () => ({
     priorityCondition: "",
     priorityName: "",

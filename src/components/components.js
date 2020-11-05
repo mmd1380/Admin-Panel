@@ -6,7 +6,8 @@ import AppPartiesTable from "./common/AppPartiesTable";
 import AppNavMenu from "./layout/AppNavMenu";
 import AppFormAddress from "./common/AppFormAddressTable";
 import AppSortingSearch from "./common/AppSortingSearch";
-import AppDialog from "./global/AppDialog"
+import AppDialog from "./global/AppDialog";
+import AppChip from "./common/AppChip"
 
 export {
   AppForm,
@@ -14,8 +15,9 @@ export {
   AppFooter,
   AppSearchBox,
   AppNavMenu,
+  AppSortingSearch,
+  AppDialog,
+  AppChip,
   AppPartiesTable,
   AppFormAddress,
-  AppSortingSearch,
-  AppDialog
 }

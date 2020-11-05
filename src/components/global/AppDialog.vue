@@ -1,5 +1,5 @@
 <template>
-  <v-dialog width="360" v-model="active">
+  <v-dialog width="360" v-model="$store.state.activeModal">
     <v-card tile dir="rtl" class="px-4 py-2">
       <v-card-title>ذخیره فیلتر جستجو</v-card-title>
       <v-divider></v-divider>
@@ -11,8 +11,8 @@
         reverse
       ></v-text-field>
       <v-card-actions>
-        <v-btn color="primary">ثبت فیلتر</v-btn>
-        <v-btn color="primary" text class="mx-2" @click="$store.commit('SET_ACTIVE_MODAL', false)">انصراف</v-btn>
+        <v-btn color="primary" @click="setModal()">ثبت فیلتر</v-btn>
+        <v-btn color="primary" text class="mx-2" @click="setModal()">انصراف</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -20,8 +20,11 @@
 
 <script>
 export default {
-  computed: {
-    active() { return this.$store.state.activeModal }
+  name: "AppDialog",
+  methods: {
+    setModal() {
+      this.$store.commit("SET_ACTIVE_MODAL", false)
+    }
   }
 }
 </script>

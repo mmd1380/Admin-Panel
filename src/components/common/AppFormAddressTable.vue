@@ -179,7 +179,7 @@
 
 <script>
 export default {
-  AddressType: "AddressCard",
+  name: "AddressCard",
   data: () => ({
 
     dialog: false,
