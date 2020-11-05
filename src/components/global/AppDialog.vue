@@ -7,6 +7,7 @@
         با ذخیره کردن فیلتر جستجو امکان دسترسی به فیلتر مورد نظر در سریع ترین حالت ممکن خواهید داشت
       </v-card-text>
       <v-text-field
+        v-model="filter"
         label="فیلتر جستجو"
         reverse
       ></v-text-field>
@@ -21,10 +22,13 @@
 <script>
 export default {
   name: "AppDialog",
+  data: () => ({
+    filter: ""
+  }),
   methods: {
     setModal() {
       this.$store.commit("SET_ACTIVE_MODAL", false);
-      this.$store.commit("SET_SNACKBAR");
+      this.$store.commit("SET_SNACKBAR", this.filter);
     }
   }
 }

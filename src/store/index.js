@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     filteredSearch: {},
     activeModal: false,
-    snackbar: {}
+    snackbar: ""
   },
   getters: {},
   mutations: {

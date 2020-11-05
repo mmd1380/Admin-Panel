@@ -20,14 +20,13 @@ export default {
   data: () => ({
     searchName:'',
     snackbar: false,
-    text: {},
     timeout: 2000,
   }),
   created() {
     this.$store.subscribe((mutation, state) => {
       if(mutation.type === "SET_SNACKBAR") {
         this.snackbar = true;
-        this.text = state.snackbar;
+        this.searchName = state.snackbar;
       }
     })
   }
