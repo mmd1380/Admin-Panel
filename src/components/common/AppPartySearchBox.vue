@@ -28,9 +28,9 @@
     <v-row justify="start">
       <v-col cols="9">
         <transition name="slide">
-          <v-card class="drop-down pa-4" v-if="show">
+          <v-card class="drop-down pa-4" tile v-if="show">
             <v-row>
-              <v-col v-for="input in inputs" :key="input" cols="6">
+              <v-col v-for="(input, index) in inputs" :key="index" cols="6">
                 <v-row no-gutters>
                   <v-col md="7">
                     <v-text-field
@@ -38,8 +38,8 @@
                       flat
                       :label="input"
                       dense
-                      style="border-radius: 0px 10px 10px 0px"
                       v-model="inputValues[input]"
+                      style="border-radius: 0px 10px 10px 0px;"
                     ></v-text-field>
                   </v-col>
                   <v-col md="3" class="mr-md-5">
@@ -67,14 +67,15 @@
 
                   <v-expand-transition>
                     <v-card flat v-show="expand" class="mx-auto">
-                      <AppSortingSearch
-                        v-for="(item, id) in rows"
-                        :key="id"
-                        :priority="item.label"
-                        sorting-priority="شرط"
-                        @clicked="deleteItem(id)"
-                      />
-
+                      <transition-group name="slide">
+                        <AppSortingSearch
+                          v-for="(item, idx) in rows"
+                          :key="item.id"
+                          :priority="item.label"
+                          sorting-priority="شرط"
+                          @clicked="deleteItem(idx)"
+                        />
+                      </transition-group>
                       <v-btn
                         color="primary"
                         elevation="2"
@@ -82,7 +83,7 @@
                         @click="AddRow()"
                       >
                         <v-icon>mdi-plus</v-icon>
-                        افزودن ترتیب نمایش
+                        <span>افزودن ترتیب نمایش</span>
                       </v-btn>
                     </v-card>
                   </v-expand-transition>
@@ -109,9 +110,9 @@
           close
           color="primary"
           outlined
-          @click:close="chip3 = false"
           v-for="(item, index) in getFilteredSearchData"
-          :key="item"
+          :key="index"
+          @click:close="removeChip(index)"
           >{{ index }}: {{ item }}</v-chip
         >
       </v-col>
@@ -120,7 +121,7 @@
 </template>
 
 <script>
-import AppSortingSearch from "./AppSortingSearch";
+import { AppSortingSearch } from "@/components/components.js";
 export default {
   components: { AppSortingSearch },
   data: () => ({
@@ -132,7 +133,7 @@ export default {
     inputValues: {},
     searchedValue: "",
     expand: false,
-    rowsLabel: ["اول", "دوم", "سوم", "چهارم", "پنجم"],
+    rowsLabel: ["اول", "دوم", "سوم", "چهارم", "پنجم", "ششم"],
     rows: [
       {
         id: 1,
@@ -141,34 +142,28 @@ export default {
     ],
   }),
   computed: {
-    getFilteredSearchData() {
-      return this.$store.state.filteredSearch;
-    },
-    sortRows() {
-      return 1
-    }
+    getFilteredSearchData() { return this.$store.state.filteredSearch }
   },
   methods: {
-    getData() {
-      this.$store.dispatch("fetchData");
-      this.show = false;
-    },
     startSearch() {
       this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
       this.show = false;
-      console.log(this.$store.state.filteredSearch);
     },
     AddRow() {
-      //let arr = ["اول", "دوم", "سوم", "چهارم", "پنجم"];
-      let numOfRows = this.rows.length;
+      const numOfRows = this.rows.length;
       this.rows.push({
         label: `اولویت ${this.rowsLabel[numOfRows]}`,
-        id: numOfRows + 1,
+        id: Symbol()
       });
     },
     deleteItem(id) {
-      this.rows.splice(id, 1)
+      this.rows.splice(id, 1);
+      this.rows.forEach((el, index) => el.label = `اولویت ${this.rowsLabel[index]}`);
     },
+    removeChip(label) {
+      delete this.inputValues[label];
+      this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
+    }
   },
 };
 </script>
