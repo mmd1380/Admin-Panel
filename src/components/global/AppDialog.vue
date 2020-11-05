@@ -23,7 +23,8 @@ export default {
   name: "AppDialog",
   methods: {
     setModal() {
-      this.$store.commit("SET_ACTIVE_MODAL", false)
+      this.$store.commit("SET_ACTIVE_MODAL", false);
+      this.$store.commit("SET_SNACKBAR");
     }
   }
 }

@@ -7,15 +7,16 @@
         <slot />
       </div>
     </v-card>
-    <AppNavMenu />    
+    <AppNavMenu />
+    <AppSnackBar />
   </v-card>
 </template>
 
 <script>
-import { AppNavBar, AppNavMenu } from "@/components/components.js";
+import { AppNavBar, AppNavMenu, AppSnackBar } from "@/components/components.js";
 
 export default {
-  components: { AppNavBar, AppNavMenu },
+  components: { AppNavBar, AppNavMenu, AppSnackBar },
   data: () => ({
     title: ""
   }),

@@ -7,7 +7,8 @@ import AppNavMenu from "./layout/AppNavMenu";
 import AppFormAddress from "./common/AppFormAddressTable";
 import AppSortingSearch from "./common/AppSortingSearch";
 import AppDialog from "./global/AppDialog";
-import AppChip from "./common/AppChip"
+import AppChip from "./common/AppChip";
+import AppSnackBar from "./common/AppSnackBar";
 
 export {
   AppForm,
@@ -20,4 +21,5 @@ export {
   AppChip,
   AppPartiesTable,
   AppFormAddress,
+  AppSnackBar
 }
