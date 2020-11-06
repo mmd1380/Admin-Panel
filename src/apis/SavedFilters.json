@@ -11,6 +11,7 @@
       { "IssuanceDateFrom": "1399/08/16", "condition": "بزرگتر از" },
       { "IssuanceDateTo": "1399/08/17", "condition": "کوچکتر از" },
       { "IDNo": null, "condition": "مساوی" },
+      { "NationalID": null, "condition": "مساوی" },
       { "PersonID": null, "condition": "شامل" },
       { "Roles": [], "condition": "شامل" }
     ],
@@ -28,6 +29,7 @@
       { "IssuanceDateFrom": null, "condition": "بزرگتر از" },
       { "IssuanceDateTo": null, "condition": "کوچکتر از" },
       { "IDNo": null, "condition": "مساوی" },
+      { "NationalID": null, "condition": "مساوی" },
       { "PersonID": null, "condition": "شامل" },
       { "Roles": ["نماینده"], "condition": "شامل" }
     ],
@@ -45,6 +47,7 @@
       { "IssuanceDateFrom": null, "condition": "بزرگتر از" },
       { "IssuanceDateTo": null, "condition": "کوچکتر از" },
       { "IDNo": null, "condition": "مساوی" },
+      { "NationalID": null, "condition": "مساوی" },
       { "PersonID": null, "condition": "شامل" },
       { "Roles": ["کارشناس"], "condition": "شامل" }
     ],

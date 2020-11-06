@@ -1,0 +1,106 @@
+{
+  "SearchParty": {
+    "SimpleSearch": [
+      {
+        "label": "جستجو",
+        "type": "text",
+        "placeholder": "از بین اسامی اشخاص و شهرها و ...",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      }
+    ],
+    "AdvancedSearch": [
+      {
+        "name": "FName",
+        "label": "نام",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      },
+      {
+        "name": "LName",
+        "label": "نام خانوادگی",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      },
+      {
+        "name": "IDNo",
+        "label": "کد ملی",
+        "type": "number",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      },
+      {
+        "name": "PersonID",
+        "label": "کد شخص",
+        "type": "number",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      },
+      {
+        "name": "BirthDateFrom",
+        "label": "تاریخ تولد از",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": ["بیشتر از", "مساوی"]
+      },
+      {
+        "name": "BirthDateTo",
+        "label": "تاریخ تولد تا",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": ["کوچکتر از", "مساوی"]
+      },
+      {
+        "name": "NationalID",
+        "label": "شماره شناسنامه",
+        "type": "number",
+        "display": true,
+        "value": "",
+        "condition": ["شامل", "شروع با", "پایان با", "مساوی"]
+      },
+      {
+        "name": "IssuanceDateFrom",
+        "label": "تاریخ ایجاد از",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": [ "بیشتر از" ]
+      },
+      {
+        "name": "IssuanceDateTo",
+        "label": "تاریخ ایجاد تا",
+        "type": "text",
+        "display": true,
+        "value": "",
+        "condition": ["کوچکتر از"]
+      },
+      {
+        "name": "Roles",
+        "label": "نقش ها",
+        "type": "select",
+        "display": true,
+        "items": ["بیمه گذار", "بیمه شده", "ذینفع", "نمایندگی"],
+        "value": [],
+        "condition": [ "شامل","مساوی" , "مخالف"]
+      },
+      {
+        "name": "IssuanceCityName",
+        "label": "شهر محل ایجاد",
+        "type": "select",
+        "display": true,
+        "items": ["تهران", "تبریز", "شیراز", "مشهد", "کرمان", "همدان"],
+        "value": [],
+        "condition": [ "شامل","مساوی" , "مخالف"]
+      }
+    ]
+  }
+}
