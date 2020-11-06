@@ -1,0 +1,56 @@
+[
+  {
+    "ID": 1,
+    "FilterName": "ایجاد شده های امروز",
+    "Where": [
+      { "LName": null, "condition": "شامل" },
+      { "FName": null, "condition": "شامل" },
+      { "IssuanceCityName": "تهران", "condition": "مساوی" },
+      { "BirthDateFrom": null, "condition": "بزرگتر از" },
+      { "BirthDateTo": null, "condition": "کوچکتر از" },
+      { "IssuanceDateFrom": "1399/08/16", "condition": "بزرگتر از" },
+      { "IssuanceDateTo": "1399/08/17", "condition": "کوچکتر از" },
+      { "IDNo": null, "condition": "مساوی" },
+      { "PersonID": null, "condition": "شامل" },
+      { "Roles": [], "condition": "شامل" }
+    ],
+    "OrderBy": [{ "First": "PersonID", "Sorting": "نزولی" }]
+  },
+  {
+    "ID": 2,
+    "FilterName": "نمایندگان تهران",
+    "Where": [
+      { "LName": null, "condition": "شامل" },
+      { "FName": null, "condition": "شامل" },
+      { "IssuanceCityName": "تهران", "condition": "مساوی" },
+      { "BirthDateFrom": null, "condition": "بزرگتر از" },
+      { "BirthDateTo": null, "condition": "کوچکتر از" },
+      { "IssuanceDateFrom": null, "condition": "بزرگتر از" },
+      { "IssuanceDateTo": null, "condition": "کوچکتر از" },
+      { "IDNo": null, "condition": "مساوی" },
+      { "PersonID": null, "condition": "شامل" },
+      { "Roles": ["نماینده"], "condition": "شامل" }
+    ],
+    "OrderBy": [{ "First": "IssuanceDate", "Sorting": "صعودی" }]
+  },
+  {
+    "ID": 3,
+    "FilterName": "کارشناسان تبریز",
+    "Where": [
+      { "LName": null, "condition": "شامل" },
+      { "FName": null, "condition": "شامل" },
+      { "IssuanceCityName": "تبریز", "condition": "مساوی" },
+      { "BirthDateFrom": null, "condition": "بزرگتر از" },
+      { "BirthDateTo": null, "condition": "کوچکتر از" },
+      { "IssuanceDateFrom": null, "condition": "بزرگتر از" },
+      { "IssuanceDateTo": null, "condition": "کوچکتر از" },
+      { "IDNo": null, "condition": "مساوی" },
+      { "PersonID": null, "condition": "شامل" },
+      { "Roles": ["کارشناس"], "condition": "شامل" }
+    ],
+    "OrderBy": [
+      { "First": "lName", "Sorting": "صعودی" },
+      { "First": "FName", "Sorting": "صعودی" }
+    ]
+  }
+]
