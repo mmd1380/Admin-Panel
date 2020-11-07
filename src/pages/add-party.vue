@@ -35,10 +35,13 @@ export default {
   data: () => ({
     selectedItem: null,
     items: [
-      { text: 'اطلاعات اصلی', icon: 'mdi-account', link: "main" },
-      { text: 'اطلاعات تکمیلی', icon: 'mdi-check', link: "complement" },
-      { text: 'اطلاعات تماس ها', icon: 'mdi-phone', link:  "communicate"},
-      { text: 'اطلاعات آدرس ها', icon: 'mdi-door', link: "address" },
+      { text: 'اطلاعات اصلی',   link: "main" },
+      { text: 'اطلاعات تکمیلی', link: "complement" },
+      { text: 'اطلاعات تماس ها',   link:  "communicate"},
+      { text: 'آدرس ها', link: "address" },
+      { text: 'حساب های بانکی',  link: "address" },
+      { text: 'ارتباط با سایر اشخاص', link: "address" },
+      { text: 'اطلاعات لاتین',   link: "address" },
     ],
     hashLinks: ["main", "complement", "communicate", "address"],
   })

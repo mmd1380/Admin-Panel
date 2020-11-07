@@ -1,7 +1,9 @@
 <template>
   <v-app dark>
     <layout>
-      <transition name="slide">
+      <transition
+          name="slide"
+      >
         <router-view />
       </transition>
     </layout>

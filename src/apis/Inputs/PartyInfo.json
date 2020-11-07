@@ -1,0 +1,182 @@
+{
+  "PartyInfo": {
+    "MainInfo": [
+      {"title": "مشخصات اصلی"},
+      {
+        "label": "ملیت",
+        "type": "select",
+        "placeholder": "",
+        "display": true,
+        "readOnly": false,
+        "value": "ایرانی",
+        "Items": ["ایرانی", "افغانستانی", "پاکستانی", "عراقی"]
+      },
+      {
+        "label": "کد ملی",
+        "type": "text",
+        "placeholder": "مانند 1-294678-002",
+        "display": true,
+        "readOnly": false,
+        "validation": ["required", "maxlength"]
+      },
+      {
+        "label": "تاریخ تولد",
+        "type": "date",
+        "display": true,
+        "readOnly": false,
+        "validation": ["required"]
+      },
+      "Inquired",
+      [
+        {
+          "label": "نام",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمد",
+          "validation": ["required", "maxlength"]
+        },
+        {
+          "label": "نام خانوادگی",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمدی",
+          "validation": ["required", "maxlength"]
+        },
+        {
+          "label": "نام پدر",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمدی",
+          "validation": ["required", "maxlength"]
+        },
+        {
+          "label": "محل تولد",
+          "type": "select",
+          "display": true,
+          "readOnly": true,
+          "value": "گیلان",
+          "Items": ["تبریز", "گیلان", "تهران"]
+        },
+        {
+          "label": "جنسیت",
+          "type": "select",
+          "placeholder": "",
+          "display": true,
+          "readOnly": true,
+          "value": "مرد",
+          "Items": ["زن", "مرد"]
+        }
+      ],
+
+      {
+        "label": "شماره شناسنامه",
+        "type": "text",
+        "display": true,
+        "readOnly": false,
+        "value": "محمدی",
+        "validation": ["required", "maxlength"]
+      },
+      {
+        "label": "تاریخ صدور شناسنامه",
+        "type": "date",
+        "display": true,
+        "readOnly": false,
+        "validation": ["required"]
+      },
+      {
+        "label": "آپلود فایل عکس",
+        "placeholder":"فایل خود را آپلود کنید",
+        "type": "file",
+        "display": true,
+        "readOnly": false,
+        "validation": ["required"]
+      }
+
+    ],
+    "MoreInfo": [
+      {"title": "اطلاعات تکمیلی"},
+      {
+        "label": "نقش ها",
+        "type": "combobox",
+        "display": true,
+        "readOnly": false,
+        "value": "",
+        "Items": ["کارشناس ", "بیمه‌گر اتکایی", "مرکز درمانی", "بازاریاب", "ذینفع", "بیمه شده", "بیمه گذار", "نماینده/شعبه"]
+      },
+      {
+        "label": "تعداد فرزندان",
+        "type": "number",
+        "display": true,
+        "readOnly": false,
+        "value": "0"
+        },
+      {
+        "label": "تاریخ تقریبی بازنشستگی",
+        "type": "date",
+        "display": true,
+        "readOnly": false
+        },
+      {
+        "label": "مدرک تحصیلی",
+        "type": "autocomplete",
+        "display": true,
+        "readOnly": false,
+        "value": "",
+        "Items": ["کارشناسی ارشد","کارشناسی" ,  "فوق دیپلم", "دیپلم" ]
+      },
+      {
+        "label": "شماره پاسپورت",
+        "type": "text",
+        "display": true,
+        "readOnly": false,
+        "validation": [ "maxlength"]
+      },
+      {
+        "label": "تاریخ انقضا پاسپورت",
+        "type": "date",
+        "display": true,
+        "readOnly": false
+      }
+    ],
+    "Contact" : [
+      {"title": "اطلاعات تماس ها"},
+        {
+          "label": "کانال تماس",
+          "type": "select",
+          "display": true,
+          "readOnly": false,
+          "Items": ["موبایل", "تلفن ثابت", "شبکه اجتماعی", "ایمیل"]
+        },
+      {
+          "label": "مورد تماس",
+          "type": "combobox",
+          "display": true,
+          "readOnly": false,
+          "Items": [ "تماس","پیامک", "واتساپ", "تلگرام", "بله", "همه"]
+        },
+      {
+          "label": "مقدار تماس",
+          "type": "text",
+          "display": true,
+          "readOnly": false
+        },
+      {
+        "label": "ساعت ترجیحی از",
+        "type": "text",
+        "textFieldType": "time",
+        "display": true,
+        "readOnly": false
+      },
+      {
+        "label": "ساعت ترجیحی تا",
+        "type": "text",
+        "textFieldType": "time",
+        "display": true,
+        "readOnly": false
+      }
+    ]
+  }
+}
