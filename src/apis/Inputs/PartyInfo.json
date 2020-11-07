@@ -26,8 +26,7 @@
         "readOnly": false,
         "validation": ["required"]
       },
-      "Inquired",
-      [
+      {"Inquired": [
         {
           "label": "نام",
           "type": "text",
@@ -69,8 +68,7 @@
           "value": "مرد",
           "Items": ["زن", "مرد"]
         }
-      ],
-
+      ]},
       {
         "label": "شماره شناسنامه",
         "type": "text",
@@ -143,7 +141,7 @@
     ],
     "Contact" : [
       {"title": "اطلاعات تماس ها"},
-        {
+      {
           "label": "کانال تماس",
           "type": "select",
           "display": true,
@@ -177,6 +175,58 @@
         "display": true,
         "readOnly": false
       }
+    ],
+    "Address" : [
+      {"title": "آدرس ها"},
+      {
+        "label": "نوع آدرس",
+        "type": "select",
+        "display": true,
+        "readOnly": false,
+        "Items": ["خانه",  "محل کار" ]
+      },
+      {
+        "label": "کد پستی",
+        "type": "text",
+        "display": true,
+        "readOnly": false ,
+        "validation": ["maxlength", "required"]
+      },
+
+      {
+        "label": "شهر",
+        "type": "select",
+        "display": true,
+        "readOnly": false,
+        "value": "گیلان",
+        "Items": ["تبریز", "گیلان", "تهران"]
+      },
+      {
+        "label": "آدرس",
+        "type": "text",
+        "display": true,
+        "readOnly": false ,
+        "validation": ["maxlength", "required"]
+      },
+      {
+        "label": "تاریخ شروع سکونت",
+        "type": "date",
+        "display": true,
+        "readOnly": false
+      },
+      {
+        "label": "تاریخ پایان سکونت",
+        "type": "date",
+        "display": true,
+        "readOnly": false
+      },
+      {
+        "label": "پیشفرض",
+        "type": "radio",
+        "display": true,
+        "readOnly": false
+      }
+
     ]
   }
 }
