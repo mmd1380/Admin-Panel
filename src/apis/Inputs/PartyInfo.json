@@ -267,24 +267,6 @@
           "readOnly": false ,
           "Items": ["پس انداز" , "قرض الحسنه"],
           "validation": ["maxlength", "required"]
-        },
-        {
-          "label": "شماره ",
-          "type": "text",
-          "display": true,
-          "readOnly": false
-        },
-        {
-          "label": "تاریخ پایان سکونت",
-          "type": "date",
-          "display": true,
-          "readOnly": false
-        },
-        {
-          "label": "پیشفرض",
-          "type": "radio",
-          "display": true,
-          "readOnly": false
         }
       ]
     }
