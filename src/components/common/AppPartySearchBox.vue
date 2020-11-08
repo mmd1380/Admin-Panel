@@ -30,29 +30,22 @@
         <transition name="slide">
           <v-card class="drop-down pa-4" tile v-if="show">
             <v-row>
+              <v-col>
+                <AppChip 
+                  v-for="(item, index) in getSavedFilters"
+                  :key="index"
+                  :propertyName="item.FilterName"
+                  @click-chip="selectFilters(index)"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
               <v-col v-for="(input, index) in inputs" :key="index" cols="6">
-                <v-row no-gutters>
-                  <v-col md="7">
-                    <v-text-field
-                      reverse
-                      flat
-                      :label="input"
-                      dense
-                      v-model="inputValues[input]"
-                      style="border-radius: 0px 10px 10px 0px;"
-                    ></v-text-field>
-                  </v-col>
-                  <v-col md="3" class="mr-md-5">
-                    <v-select
-                       dense
-                       flat
-                      :items="items"
-                      label="شرط"
-                      reverse
-                      style="border-radius: 10px 0px 0 10px;direction: ltr"
-                    ></v-select>
-                  </v-col>
-                </v-row>
+                <AppSearchPartyInputs 
+                  :label="input.label"
+                  :conditionItems="input.condition"
+                  :value="savedValues[index]"
+                />
               </v-col>
             </v-row>
             <v-row>
@@ -95,7 +88,7 @@
                 <v-btn color="primary" class="mx-2" @click.stop="startSearch()"
                   >جستجو</v-btn
                 >
-                <v-btn text @click.stop="$store.commit('SET_ACTIVE_MODAL', true)">دخیره جستجو</v-btn>
+                <v-btn text @click.stop="showModal()">دخیره جستجو</v-btn>
                 <AppDialog />
               </v-col>
             </v-row>
@@ -120,20 +113,25 @@
 </template>
 
 <script>
+import AppSearchPartyInputs from "../global/AppSearchPartyInputs"
 import AppSortingSearch from "./AppSortingSearch";
 import AppChip from "./AppChip";
 import AppDialog from "../global/AppDialog";
 
 export default {
   name: "AppSearchBox",
-  components: { AppSortingSearch, AppChip, AppDialog },
+  components: { AppSortingSearch, AppChip, AppDialog, AppSearchPartyInputs },
+  created() { 
+    this.$store.dispatch("getSavedFilters"); 
+    this.$store.dispatch("getSearchInputs");
+    this.inputs = this.$store.state.searchInputs; 
+  },
   data: () => ({
     show: false,
     btn: "mdi-arrow-down-drop-circle",
-    inputs: ["نام خانوادگی", "نام", "شهر", "تاریخ تولد", "کد ملی", "کد شخص"],
-    items: ["کوچکتر از", "مساوی", "بزرگتر از", "مخالف", "شروع با", "پایان با"],
-    inputValues: {},
+    inputs: [],
     searchedValue: "",
+    savedValues: [],
     expand: false,
     rowsLabel: ["اول", "دوم", "سوم", "چهارم", "پنجم", "ششم"],
     rows: [
@@ -144,11 +142,15 @@ export default {
     ],
   }),
   computed: {
-    getFilteredSearchData() { return this.$store.state.filteredSearch }
+    getFilteredSearchData() { 
+      if(!this.show)
+        return this.$store.state.searchValues;
+      return undefined;
+    },
+    getSavedFilters() { return this.$store.state.filterChips },
   },
   methods: {
     startSearch() {
-      this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
       this.show = false;
     },
     AddRow() {
@@ -163,8 +165,14 @@ export default {
       this.rows.forEach((el, index) => el.label = `اولویت ${this.rowsLabel[index]}`);
     },
     removeChip(label) {
-      delete this.inputValues[label];
-      this.$store.commit("SET_FILTERED_SEARCH", this.inputValues);
+      this.$store.commit("SET_FILTERED_SEARCH", label);
+    },
+    showModal() {
+      this.$store.commit("SET_ACTIVE_MODAL", true);
+    },
+    selectFilters(index) {
+      this.savedValues = this.getSavedFilters[index].Where;
+      console.log(this.savedValues);
     }
   },
 };

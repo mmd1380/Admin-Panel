@@ -23,78 +23,93 @@
         },
         {
           "label": "تاریخ تولد",
-          "type": "date",
+          "type": "text",
           "display": true,
           "readOnly": false,
           "validation": ["required"]
         },
         {
-          "Inquired": [
-            {
-              "label": "نام",
-              "type": "text",
-              "display": true,
-              "readOnly": true,
-              "value": "محمد",
-              "validation": ["required", "maxlength"]
-            },
-            {
-              "label": "نام خانوادگی",
-              "type": "text",
-              "display": true,
-              "readOnly": true,
-              "value": "محمدی",
-              "validation": ["required", "maxlength"]
-            },
-            {
-              "label": "نام پدر",
-              "type": "text",
-              "display": true,
-              "readOnly": true,
-              "value": "محمدی",
-              "validation": ["required", "maxlength"]
-            },
-            {
-              "label": "محل تولد",
-              "type": "select",
-              "display": true,
-              "readOnly": true,
-              "value": "گیلان",
-              "Items": ["تبریز", "گیلان", "تهران"]
-            },
-            {
-              "label": "جنسیت",
-              "type": "select",
-              "placeholder": "",
-              "display": true,
-              "readOnly": true,
-              "value": "مرد",
-              "Items": ["زن", "مرد"]
-            },
-            {
-              "label": "شماره شناسنامه",
-              "type": "text",
-              "display": true,
-              "readOnly": false,
-              "value": "محمدی",
-              "validation": ["required", "maxlength"]
-            },
-            {
-              "label": "تاریخ صدور شناسنامه",
-              "type": "date",
-              "display": true,
-              "readOnly": false,
-              "validation": ["required"]
-            },
-            {
-              "label": "آپلود فایل عکس",
-              "placeholder":"فایل خود را آپلود کنید",
-              "type": "file",
-              "display": true,
-              "readOnly": false,
-              "validation": ["required"]
-            }
-          ]}
+          "label": "نام",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمد",
+          "validation": ["required", "maxlength"],
+          "inquired": true
+        },
+        {
+          "label": "نام خانوادگی",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمدی",
+          "validation": ["required", "maxlength"],
+          "inquired": true
+        },
+        {
+          "label": "نام پدر",
+          "type": "text",
+          "display": true,
+          "readOnly": true,
+          "value": "محمدی",
+          "validation": ["required", "maxlength"],
+          "inquired": true
+        },
+        {
+          "label": "محل تولد",
+          "type": "select",
+          "display": true,
+          "readOnly": true,
+          "value": "گیلان",
+          "Items": ["تبریز", "گیلان", "تهران"],
+          "inquired": true
+        },
+        {
+          "label": "جنسیت",
+          "type": "select",
+          "placeholder": "",
+          "display": true,
+          "readOnly": true,
+          "value": "مرد",
+          "Items": ["زن", "مرد"],
+          "inquired": true
+        },
+        {
+          "label": "پیشوند",
+          "type": "select",
+          "placeholder": "",
+          "display": true,
+          "readOnly": true,
+          "value": "",
+          "Items": ["سرکار خانم", "جناب آقای"],
+          "inquired": true
+        },
+        {
+          "label": "شماره شناسنامه",
+          "type": "text",
+          "display": true,
+          "readOnly": false,
+          "value": "محمدی",
+          "validation": ["required", "maxlength"] 
+         
+        },
+        {
+          "label": "تاریخ صدور شناسنامه",
+          "type": "text",
+          "display": true,
+          "readOnly": false,
+          "validation": ["required"] 
+    
+        },
+        {
+          "label": "آپلود فایل عکس",
+          "placeholder":"فایل خود را آپلود کنید",
+          "type": "file",
+          "display": true,
+          "readOnly": false,
+          "validation": ["required"] 
+        
+        }
       ]
     }
   ,
@@ -112,14 +127,14 @@
         },
         {
           "label": "تعداد فرزندان",
-          "type": "number",
+          "type": "text",
           "display": true,
           "readOnly": false,
           "value": "0"
         },
         {
           "label": "تاریخ تقریبی بازنشستگی",
-          "type": "date",
+          "type": "text",
           "display": true,
           "readOnly": false
         },
@@ -140,7 +155,7 @@
         },
         {
           "label": "تاریخ انقضا پاسپورت",
-          "type": "date",
+          "type": "text",
           "display": true,
           "readOnly": false
         }
@@ -222,13 +237,13 @@
         },
         {
           "label": "تاریخ شروع سکونت",
-          "type": "date",
+          "type": "text",
           "display": true,
           "readOnly": false
         },
         {
           "label": "تاریخ پایان سکونت",
-          "type": "date",
+          "type": "text",
           "display": true,
           "readOnly": false
         },
@@ -258,9 +273,20 @@
           "Items": ["بانک ملی", "بانک ملت","بانک پاسارگاد","بانک صادرات"],
           "validation": ["maxlength", "required"]
         },
-
+        {
+          "label": "شماره شبا",
+          "type": "text",
+          "display": true,
+          "readOnly": false
+        },
         {
           "label": "نام شعبه",
+          "type": "text",
+          "display": true,
+          "readOnly": false
+        },
+        {
+          "label": "نام صاحب حساب",
           "type": "text",
           "display": true,
           "readOnly": false

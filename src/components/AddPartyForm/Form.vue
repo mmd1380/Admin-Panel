@@ -13,12 +13,12 @@
             v-for="(input, index) in section.inputs"
             :key="index"
             :class="{ 'overlay' :input.inquired }"
+            style="direction: ltr;"
           >
             <span v-if="input.type === 'text'">
               <v-text-field
                 reverse
                 :label="input.label"
-                :rules="input.validations"
               ></v-text-field>
             </span>
 
@@ -70,13 +70,13 @@
 
 <script>
 import Table from "./Table";
-import Validations from "@/utils/validations.js"
+import Validations from "@/utils/validations.js";
 
 export default {
   components: { Table },
   data: () => ({
     forms: [],
-    open: [0,1,2,3],
+    open: [0,1,2,3,4],
     ...Validations
   }),
   created() {
