@@ -1,6 +1,7 @@
 {
   "PartyInfo": [
     {
+      "name": "mainInfo",
       "title": "مشخصات اصلی",
       "inputs": [
         {
@@ -98,6 +99,7 @@
     }
   ,
     {
+      "name": "moreInfo",
       "title": "اطلاعات تکمیلی",
       "inputs": [
         {
@@ -145,6 +147,7 @@
       ]
     },
     {
+      "name": "contact",
       "title": "اطلاعات تماس ها",
       "inputs": [
         {
@@ -184,6 +187,7 @@
       ]
     },
     {
+      "name": "address",
       "title": "آدرس ها",
       "inputs": [
         {
@@ -237,6 +241,7 @@
       ]
     },
     {
+      "name": "bankAccount",
       "title": "حساب های بانکی",
       "inputs": [
         {
