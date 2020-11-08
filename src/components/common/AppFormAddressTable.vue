@@ -1,5 +1,6 @@
 <template>
   <v-data-table
+      reverse
       :headers="headers"
       :items="Parties"
       class="elevation-1"
