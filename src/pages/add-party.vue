@@ -1,7 +1,7 @@
 <template>
   <v-row ref="window">
     <v-col cols="9">
-      <AppForm />
+      <Form />
     </v-col>
     <v-col cols="3" class="context-menu">
       <v-list dir="ltr" shaped>
@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import { AppForm } from "../components/components.js";
+import Form from "@/components/AddPartyForm/Form";
 
 export default {
-  components: { AppForm },
+  components: {Form },
   data: () => ({
     selectedItem: null,
     items: [
