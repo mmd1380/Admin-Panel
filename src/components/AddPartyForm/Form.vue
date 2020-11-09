@@ -22,6 +22,7 @@
                 v-model="values[input.label]"
                 :rules="[required()]"
               ></v-text-field>
+              salam
             </span>
 
             <span v-else-if="input.type === 'file'">
