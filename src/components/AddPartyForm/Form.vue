@@ -3,9 +3,9 @@
     <v-expansion-panel
       v-for="(section, index) in forms"
       :key="index"
-      style="width: 1000px;"
+      class="section"
     >
-      <v-expansion-panel-header style="text-align: right; direction: rtl">{{ section.title }}</v-expansion-panel-header>
+      <v-expansion-`panel-header style="text-align: right; direction: rtl">{{ section.title }}</v-expansion->
       <v-expansion-panel-content>
         <v-row>
           <v-col
@@ -19,12 +19,16 @@
               <v-text-field
                 reverse
                 :label="input.label"
+                v-model="values[input.label]"
+                :rules="[required()]"
               ></v-text-field>
             </span>
 
             <span v-else-if="input.type === 'file'">
               <v-file-input
+                reverse
                 :label="input.label"
+                v-model="values[input.label]"
               ></v-file-input>
             </span>
 
@@ -33,6 +37,7 @@
                 reverse
                 :label="input.label"
                 :items="input.Items"
+                v-model="values[input.label]"
               ></v-autocomplete>
             </span>
 
@@ -40,6 +45,7 @@
               <v-select
                 reverse
                 :label="input.label"
+                v-model="values[input.label]"
                 :items="input.Items"
               ></v-select>
             </span>
@@ -47,11 +53,11 @@
             <span v-else-if="input.type === 'combobox'">
               <v-combobox
                 reverse
+                v-model="values[input.label]"
                 :label="input.label"
                 :items="input.Items"
               ></v-combobox>
             </span>
-
           </v-col>
         </v-row>
         <v-row>
@@ -77,16 +83,25 @@ export default {
   data: () => ({
     forms: [],
     open: [0,1,2,3,4],
+    values: {},
     ...Validations
   }),
   created() {
     const db = require("@/apis/Inputs/PartyInfo.json");
     this.forms = [ ...db.PartyInfo ];
+  },
+  computed: {
+    valid() {
+      return v => !!v || "پر کنید"
+    }
   }
 }
 </script>
 
 <style>
+.section {
+  width: 1000px;
+}
 .overlay {
   background-color: #ebf6ff;
 }
